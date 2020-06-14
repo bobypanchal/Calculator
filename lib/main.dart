@@ -119,20 +119,30 @@ class _SimpleCalculatorState extends State<SimpleCalculator> {
             child: Divider(color: Colors.black12),
           ),
 
-
           Container(
-            alignment: Alignment.centerRight,
-            padding: EdgeInsets.fromLTRB(10, 20, 10, 0),
-            child: Text(equation, style: TextStyle(fontSize: equationFontSize),),
+            alignment: Alignment.bottomRight,
+            child: SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              reverse: true,
+                padding: EdgeInsets.fromLTRB(10, 20, 10, 0),
+                child: Text(
+                  equation,
+                  style: TextStyle(
+                    fontSize: equationFontSize,
+                  ),
+              ),
+            )
           ),
-
 
           Container(
             alignment: Alignment.centerRight,
             padding: EdgeInsets.fromLTRB(10, 30, 10, 0),
-            child: Text(result, style: TextStyle(fontSize: resultFontSize),),
+            child: Text(
+              result,
+              maxLines: 2,
+              style: TextStyle(fontSize: resultFontSize),
+            ),
           ),
-
 
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
